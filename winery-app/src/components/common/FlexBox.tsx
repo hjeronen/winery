@@ -1,11 +1,11 @@
 import React from 'react'
 import type { ReactNode } from 'react'
-import { View, StyleSheet, type ViewStyle } from 'react-native'
+import { View, StyleSheet, type ViewStyle, type StyleProp } from 'react-native'
 import theme from '../../theme'
 
 interface FlexBoxProps {
   children?: ReactNode
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
   flexDirection?: 'row' | 'column'
   flexWrap?: ViewStyle['flexWrap']
   alignItems?: ViewStyle['alignItems']
@@ -23,20 +23,18 @@ const styles = StyleSheet.create({
 const FlexBox: React.FC<FlexBoxProps> = ({
   children,
   style,
-  flexDirection = 'row',
+  flexDirection = 'column',
   flexWrap = 'wrap',
-  alignItems = 'flex-start',
-  justifyContent = 'space-around',
-  rowGap = 20,
+  alignItems,
+  justifyContent,
 }) => {
-  const composedStyle = [
+  const composedStyle: StyleProp<ViewStyle> = [
     styles.container,
     {
       flexDirection,
       flexWrap,
       alignItems,
       justifyContent,
-      rowGap,
     },
     style,
   ]

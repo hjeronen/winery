@@ -1,8 +1,8 @@
 import { View } from 'react-native'
-import Constants from 'expo-constants'
 import { StyleSheet } from 'react-native'
 import Text from './common/Text'
 import theme from '../theme'
+import FlexBox from './common/FlexBox'
 
 const styles = StyleSheet.create({
   header: {
@@ -16,11 +16,13 @@ const styles = StyleSheet.create({
 
 const Header = () => {
   return (
-    <View style={styles.header}>
-      <Text fontSize="heading" fontWeight="bold" color="secondary">
-        Winery Application
-      </Text>
-    </View>
+    <FlexBox style={{ flexDirection: 'row' }}>
+      <View style={styles.header}>
+        <Text fontSize="heading" fontWeight="bold" color="secondary">
+          Winery Application
+        </Text>
+      </View>
+    </FlexBox>
   )
 }
 

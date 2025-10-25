@@ -1,5 +1,6 @@
 import { FlatList, View, StyleSheet } from 'react-native'
 import WineListItem, { type Wine } from './WineListItem'
+import FlexBox from './common/FlexBox'
 
 const styles = StyleSheet.create({
   separator: {
@@ -33,11 +34,19 @@ const ItemSeparator = () => <View style={styles.separator} />
 
 const WineList = () => {
   return (
-    <FlatList
-      data={wines}
-      ItemSeparatorComponent={ItemSeparator}
-      renderItem={({ item, index, separators }) => <WineListItem wine={item} />}
-    />
+    <FlexBox
+      flexDirection="row"
+      justifyContent="flex-start"
+      alignItems="stretch"
+    >
+      <FlatList
+        data={wines}
+        ItemSeparatorComponent={ItemSeparator}
+        renderItem={({ item, index, separators }) => (
+          <WineListItem wine={item} />
+        )}
+      />
+    </FlexBox>
   )
 }
 
