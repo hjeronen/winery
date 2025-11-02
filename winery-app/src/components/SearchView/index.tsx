@@ -1,8 +1,8 @@
 import { useFormik } from 'formik'
-import TextInput from './common/TextInput'
-import Button from './common/Button'
-import FlexBox from './common/FlexBox'
-import theme from '../theme'
+import TextInput from '../common/TextInput'
+import Button from '../common/Button'
+import FlexBox from '../common/FlexBox'
+import theme from '../../theme'
 
 const SearchForm = ({ onSubmit }) => {
   const formik = useFormik({

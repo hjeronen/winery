@@ -1,6 +1,6 @@
 import { FlatList, View, StyleSheet } from 'react-native'
 import WineListItem, { type Wine } from './WineListItem'
-import FlexBox from './common/FlexBox'
+import FlexBox from '../common/FlexBox'
 
 const styles = StyleSheet.create({
   separator: {

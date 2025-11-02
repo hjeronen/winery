@@ -1,7 +1,7 @@
 import { View } from 'react-native'
-import Text from './common/Text'
+import Text from '../common/Text'
 import { StyleSheet } from 'react-native'
-import theme from '../theme'
+import theme from '../../theme'
 
 export interface Wine {
   id: number
